@@ -1,0 +1,111 @@
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet';
+* {
+  box-sizing: border-box; }
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-style: normal;
+  overflow-x: hidden;
+  background: #fff; }
+
+h1, h2, h3, h4, h5, h6, p, span {
+  padding: 0;
+  margin: 0;
+  font-weight: inherit;
+  cursor: default; }
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -moz-appearance: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  padding: 0; }
+
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none; }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+section {
+  padding: 80px 200px;
+  font-family: "Open Sans", sans-serif; }
+
+header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 768px;
+  background: url("../assets/bg.jpg");
+  background-size: cover; }
+  header h1 {
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    font-size: 80px;
+    letter-spacing: 3px; }
+  header h3 {
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: inherit; }
+  header .header__text {
+    margin-top: 20%;
+    margin-right: auto;
+    margin-left: auto; }
+  header .logo {
+    margin-top: 2%; }
+  header .button__header {
+    font-size: 20px;
+    margin-top: 10%;
+    background: none;
+    border: none;
+    opacity: 0.9;
+    color: white; }
+  header .button__header:hover {
+    opacity: 1; }
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #1111; }
+  .header .header__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .header .navigation {
+    display: flex;
+    justify-content: space-evenly; }
+    .header .navigation .nav__link {
+      margin-left: 40px;
+      text-decoration: none;
+      color: #111;
+      text-transform: uppercase; }
+    .header .navigation .important {
+      color: #00A4E5; }
+    .header .navigation .nav__link:first-child {
+      margin-left: 0; }
+  .header .about .aboutContentBlocks .block {
+    width: 20%;
+    height: 35%; }
+  .header .about .aboutContentBlocks .first {
+    background: url("../assets/Bitmap.jpg"); }
+  .header .about .aboutContentBlocks .second {
+    background: url("../assets/Bitmap (1).jpg"); }
+  .header .about .aboutContentBlocks .third {
+    background: url("../assets/Bitmap (2).png"); }
