@@ -44,16 +44,19 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin: 0; }
 
 section {
-  padding: 80px 200px;
+  padding: 80px 180px;
   font-family: "Open Sans", sans-serif; }
 
 header {
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 768px;
-  background: url("../assets/bg.jpg");
-  background-size: cover; }
+  height: 100%;
+  /* begin Scroll Down Button */ }
+  header .parallax {
+    background-image: url("../assets/bg.jpg");
+    height: 768px;
+    background-size: cover; }
   header h1 {
     font-family: "Bebas Neue", cursive;
     color: white;
@@ -70,42 +73,183 @@ header {
     margin-left: auto; }
   header .logo {
     margin-top: 2%; }
-  header .button__header {
-    font-size: 20px;
-    margin-top: 10%;
-    background: none;
-    border: none;
-    opacity: 0.9;
-    color: white; }
-  header .button__header:hover {
-    opacity: 1; }
+  header .wrapper {
+    height: 35%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; }
+  header button.scroll_down {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 30px;
+    bottom: 60px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none; }
+  header button.scroll_down:before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: scroll_down_btn-animation 2s infinite;
+    animation: scroll_down_btn-animation 2s infinite;
+    box-sizing: border-box; }
 
-.header {
+@keyframes scroll_down_btn-animation {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0; }
+  40% {
+    opacity: 1; }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes scroll_down_btn-animation {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 0; }
+  40% {
+    opacity: 1; }
+  80% {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+.headerMenu {
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 3px solid #1111; }
-  .header .header__inner {
+  .headerMenu .header__inner {
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
-  .header .navigation {
+  .headerMenu .navigation {
     display: flex;
-    justify-content: space-evenly; }
-    .header .navigation .nav__link {
+    justify-content: space-evenly;
+    text-align: center; }
+    .headerMenu .navigation .navLink {
       margin-left: 40px;
       text-decoration: none;
       color: #111;
-      text-transform: uppercase; }
-    .header .navigation .important {
+      text-transform: uppercase;
+      position: relative;
+      line-height: 1; }
+    .headerMenu .navigation .navLink:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #00A4E5;
+      content: "";
+      transition: width 0.3s ease-out; }
+    .headerMenu .navigation .navLink:hover:after, .headerMenu .navigation .navLink:focus:after {
+      width: 100%; }
+    .headerMenu .navigation .important {
       color: #00A4E5; }
-    .header .navigation .nav__link:first-child {
+    .headerMenu .navigation .nav__link:first-child {
       margin-left: 0; }
-  .header .about .aboutContentBlocks .block {
-    width: 20%;
-    height: 35%; }
-  .header .about .aboutContentBlocks .first {
-    background: url("../assets/Bitmap.jpg"); }
-  .header .about .aboutContentBlocks .second {
-    background: url("../assets/Bitmap (1).jpg"); }
-  .header .about .aboutContentBlocks .third {
-    background: url("../assets/Bitmap (2).png"); }
+
+h2 {
+  opacity: 0.8;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 32px;
+  position: relative;
+  padding-bottom: 20px; }
+
+h2:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #00A4E5; }
+
+.about h2:after {
+  margin-left: 45.5%; }
+
+.about .aboutContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 0.95; }
+  .about .aboutContent .aboutContentText {
+    margin-right: 25px;
+    width: 50%; }
+    .about .aboutContent .aboutContentText .mainText {
+      font-weight: bold;
+      font-size: 25px; }
+      .about .aboutContent .aboutContentText .mainText span {
+        color: #00A4E5; }
+    .about .aboutContent .aboutContentText .about {
+      line-height: 1.5;
+      margin-top: 8%;
+      font-size: 16px; }
+  .about .aboutContent .aboutContentBlocks {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: 0; }
+    .about .aboutContent .aboutContentBlocks .box {
+      padding: 10px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: bold;
+      width: 180px;
+      height: 300px;
+      border-radius: 5px;
+      color: #ffffff;
+      margin-left: 20px;
+      font-size: 30px; }
+    .about .aboutContent .aboutContentBlocks .box:first-child {
+      margin-left: 0; }
+    .about .aboutContent .aboutContentBlocks .first {
+      background-image: url("../assets/Bitmap.jpg");
+      background-size: cover; }
+    .about .aboutContent .aboutContentBlocks .second {
+      background-image: url("../assets/Bitmap (1).jpg");
+      background-size: cover; }
+    .about .aboutContent .aboutContentBlocks .third {
+      background-image: url("../assets/Bitmap.png");
+      background-size: cover; }
+
+.capabilities .capabilitiesHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.capabilities .allServices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.capabilities .capBoxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .capabilities .capBoxes .box {
+    width: 350px;
+    height: 450px;
+    border-radius: 5px;
+    border: 1px solid #1111; }

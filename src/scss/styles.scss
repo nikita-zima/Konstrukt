@@ -6,7 +6,7 @@ $blue: #00A4E5;
 $font-stack:'Open Sans', sans-serif;
 $primary-font: 'Bebas Neue', cursive;
 section{
-  padding: 80px 200px;
+  padding: 80px 180px;
   font-family: $font-stack;
 }
 
@@ -14,9 +14,12 @@ header{
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 768px ;
-  background: url("../assets/bg.jpg");
-  background-size: cover;
+  height: 100% ;
+  .parallax {
+    background-image: url("../assets/bg.jpg");
+    height: 768px;
+    background-size: cover;
+  }
   h1{
     font-family: $primary-font;
     color: white;
@@ -37,19 +40,84 @@ header{
   .logo{
     margin-top: 2%;
   }
-  .button__header{
-    font-size: 20px;
-    margin-top: 10%;
-    background: none;
-    border: none;
-    opacity: 0.9;
-    color: white;
+  .wrapper {
+    //background: -webkit-linear-gradient(right, #c56f82, #497ccb);
+    //background: linear-gradient(270deg, #c56f82, #497ccb);
+    height: 35%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
   }
-  .button__header:hover{
-    opacity: 1;
+
+  /* begin Scroll Down Button */
+  button.scroll_down {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 30px;
+    bottom: 60px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+  }
+  button.scroll_down:before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: scroll_down_btn-animation 2s infinite;
+    animation: scroll_down_btn-animation 2s infinite;
+    box-sizing: border-box;
+  }
+
+  @keyframes scroll_down_btn-animation {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes scroll_down_btn-animation {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      -webkit-transform: translate(0, 20px);
+      transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 }
-.header{
+.headerMenu{
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 3px solid $primary-color;
@@ -61,11 +129,27 @@ header{
   .navigation{
     display: flex;
     justify-content: space-evenly;
-    .nav__link{
+    text-align: center;
+    .navLink{
       margin-left: 40px;
       text-decoration: none;
       color: #111;
       text-transform: uppercase;
+      position: relative;
+      line-height: 1;
+    }
+    .navLink:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $blue;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+    .navLink:hover:after, .navLink:focus:after {
+      width: 100%;
     }
     .important{
       color: $blue;
@@ -74,22 +158,119 @@ header{
       margin-left: 0;
     }
   }
-  .about{
-    .aboutContentBlocks{
-      .block{
-        width: 20%;
-        height: 35%;
-      }
-      .first{
-        background: url("../assets/Bitmap.jpg");
-      }
-      .second{
-        background: url("../assets/Bitmap (1).jpg");
-      }
-      .third{
-        background: url("../assets/Bitmap (2).png");
+}
+h2{
+  opacity: 0.8;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 32px;
+  position: relative;
+  padding-bottom: 20px;
+}
+h2:after{
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid $blue;
+}
+.about {
+  h2:after{
+    margin-left: 45.5%;
+  }
+  .aboutContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0.95;
+    .aboutContentText {
+      margin-right: 25px;
+      width: 50%;
+
+      .mainText {
+        font-weight: bold;
+        font-size: 25px;
+
+        span {
+          color: #00A4E5;
+        }
       }
 
+      .about {
+        line-height: 1.5;
+        margin-top: 8%;
+        font-size: 16px;
+      }
+    }
+
+    .aboutContentBlocks {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      margin-top: auto;
+      margin-bottom: 0;
+
+      .box {
+        padding: 10px;
+        font-family: $font-stack;
+        font-weight: bold;
+        width: 180px;
+        height: 300px;
+        border-radius: 5px;
+        color: #ffffff;
+        margin-left: 20px;
+        font-size: 30px;
+
+      }
+
+      .box:first-child {
+        margin-left: 0;
+      }
+
+      .first {
+        background-image: url("../assets/Bitmap.jpg");
+        background-size: cover;
+      }
+
+      .second {
+        background-image: url("../assets/Bitmap (1).jpg");
+        background-size: cover;
+      }
+
+      .third {
+        background-image: url("../assets/Bitmap.png");
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.capabilities{
+  .capabilitiesHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .allServices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .capBoxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .box{
+      width: 350px;
+      height: 450px;
+      border-radius: 5px;
+      border: 1px solid $primary-color;
+    }
+    .capabilitiesButton{
+      margin: 0;
     }
   }
 }

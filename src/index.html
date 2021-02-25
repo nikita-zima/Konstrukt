@@ -8,62 +8,78 @@
 </head>
 <body>
 <header>
-  <div class="parallax-window" data-parallax="scroll" data-image-src="../assets/bg.jpg">
+  <div class="parallax" id="parallax">
   <div class="logo"><img src="assets/projeco-logo.svg" alt="logo"></div>
   <div class="header__text wow fadeInLeft" data-wow-duration="2s">
   <h1>Partner with konstrukt</h1>
   <h3>An award-winning construction managment firm</h3>
   </div>
-  <button class="button__header">scroll down</button>
+    <div class="wrapper">
+      <button type="button" class="scroll_down" id="scroll_down"></button>
+    </div>
   </div>
 </header>
-<section class="header">
+<section class="headerMenu">
   <div class="header__inner">
     <div class="logo"><img src="assets/projeco-logo-black.svg" alt="logo"></div>
     <nav class="navigation">
-      <a class="nav__link" href="#">home</a>
-      <a class="nav__link important" href="#">about</a>
-      <a class="nav__link" href="#">services</a>
-      <a class="nav__link" href="#">work</a>
-      <a class="nav__link" href="#">contact</a>
+      <a class="navLink" href="#">home</a>
+      <a class="navLink important" href="#">about</a>
+      <a class="navLink" href="#">services</a>
+      <a class="navLink" href="#">work</a>
+      <a class="navLink" href="#">contact</a>
     </nav>
   </div>
 </section>
-<section class="about">
-  <h2>Our story</h2>
 
+<section class="about">
+  <h2 align="center">Our story</h2>
   <div class="aboutContent">
     <div class="aboutContentText">
       <p class="mainText">
-        Founded in 2011 by John Mathew Smith, Konstruct has become the number one construction management firm
+        Founded in 2011 by John Mathew Smith, <span class="important"> Konstruct</span> has become the number one construction management firm
       </p>
       <p class="about">
         Through our relentless pursuit of innovation, a steadfast commitment to quality, and active collaboration with our clients,
         we have been delivering award-winning communities from coast to coast for more than 25 years. Konstrukt`s professional construction team builds more than 4,000 homes each year,
         providing high-quality, responsive service backed by a significant bonding capacity and national resources.
-        Our experience spans a diverse portfolio of geographic areas and product types, including luxury, mixed-use, and affordable housing apartments, as well as campus housing,
-        military family communities, and senior living facilities.
+        Our experience spans a diverse portfolio of geographic areas and product types, including luxury, mixed-use, and affordable housing apartments, as well as campus housing, military family communities, and senior living facilities.
         Together, we draw on the knowledge gained through building more than 80,000 housing units since 1992 - turning good ideas into great places to live.
       </p>
     </div>
 
     <div class="aboutContentBlocks">
-      <div class="block first">
+      <div class="box first wow fadeInRight"  data-wow-duration="1s">
         <h3>We plan</h3>
       </div>
-      <div class="block second">
+      <div class="box second wow fadeInRight"  data-wow-duration="1.5s">
         <h3>We manage</h3>
       </div>
-      <div class="block third">
+      <div class="box third wow fadeInRight"  data-wow-duration="2s">
         <h3>We build</h3>
       </div>
     </div>
   </div>
 </section>
 
+<section class="capabilities">
+  <div class="capabilitiesHeader">
+    <h2>our capabilities</h2>
+    <div class="allServices">
+      <p>We will show you the most important things</p>
+      <button class="capabilitiesButton">all services</button>
+    </div>
+  </div>
+  <div class="capBoxes">
+    <div class="box first"></div>
+    <div class="box second"></div>
+    <div class="box third"></div>
+  </div>
+</section>
+
 <script src="js/wow.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/script.js"></script>
+<script src="js/button.js"></script>
 </body>
 </html>
